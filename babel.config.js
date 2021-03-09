@@ -9,6 +9,7 @@ module.exports = {
           '@/utils': './src/utils',
           '@/pages': './src/pages',
           '@/navigator': './src/navigator',
+          '@/iconfont': './src/iconfont',
           '@/models': './src/models',
           '@/config': './src/config',
           '@/components': './src/components',

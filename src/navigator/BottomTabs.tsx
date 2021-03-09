@@ -9,6 +9,8 @@ import Home from '@/pages/Home';
 import { RootStackParamList, RootStackNavigation } from './index';
 import Setting from '@/pages/Setting';
 
+import IconFont from '../iconfont/index';
+
 type Route = RouteProp<RootStackParamList, 'BottomTabs'> & {
   state?: TabNavigationState;
 };
@@ -30,11 +32,11 @@ function getHeaderTitle(route: any) {
   const routeName = getFocusedRouteNameFromRoute(route) ?? '首页';
   switch (routeName) {
     case 'Home':
-      return '首页';
+      return '组件';
     case 'Setting':
       return '设置';
     default:
-      return '首页';
+      return '组件';
   }
 }
 export default class BottomTabs extends React.PureComponent<IProps> {
@@ -65,8 +67,9 @@ export default class BottomTabs extends React.PureComponent<IProps> {
           name="Home"
           component={Home}
           options={({ route }) => ({
-            tabBarLabel: '首页',
+            tabBarLabel: '组件',
             headerTitle: getHeaderTitle(route),
+            tabBarIcon: ({ color, size }) => <IconFont name="zujian" color={color} size={size} />,
           })}
         />
         <Tab.Screen
@@ -75,6 +78,7 @@ export default class BottomTabs extends React.PureComponent<IProps> {
           options={({ route }) => ({
             tabBarLabel: '设置',
             headerTitle: getHeaderTitle(route),
+            tabBarIcon: ({ color, size }) => <IconFont name="shezhi" color={color} size={size} />,
           })}
         />
       </Tab.Navigator>
